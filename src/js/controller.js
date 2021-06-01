@@ -43,8 +43,7 @@ const controlSearchResults = async function() {
     resultsView.renderSpinner();
     try {
         await model.loadSearchResults(query);
-        searchView.clearInput();
-        console.log(`STATE = ${model.state.search}`);        
+        searchView.clearInput();        
         const results = model.getResultsPage(1);
         resultsView.render(results);
         paginationView.render(model.state.search);
